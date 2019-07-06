@@ -1,0 +1,21 @@
+.body{
+     background-color: chocolate;
+}
+#ibody{
+    background-color: chocolate;
+}
+#imagen{
+    display: none;
+}
+#lb{
+    background-color: red;
+}
+#comment{
+  
+}
+#comment h4{
+    text-align: center;
+}
+#comentario{
+    height: 150px;
+}

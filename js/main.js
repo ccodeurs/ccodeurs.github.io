@@ -1,0 +1,12 @@
+
+
+
+
+
+
+
+
+
+
+
+CKEDITOR.replace("contenido");
