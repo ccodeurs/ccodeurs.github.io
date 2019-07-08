@@ -2,9 +2,16 @@
 <?php
 require "header.php";
 include "conexion.php";
-$consultar=" SELECT * FROM contenidos ";
-$resulta=$conexion->query($consultar);
 
+$tamanoPagina=2;
+$pagina=1;
+$empezar=($pagina-1)*$tamanoPagina;
+$consultar=" SELECT * FROM contenidos   ";
+$resulta=$conexion->query($consultar);
+$contar=$resulta->num_rows;
+$total=ceil($contar/$tamanoPagina);
+       
+        
   
 
 ?>
@@ -30,11 +37,12 @@ $resulta=$conexion->query($consultar);
            
             <div class="col-md-8 mt-5">
              <?php
+                 echo $contar;
                   while($fila=$resulta->fetch_assoc()){
                  $rutaimagen=$fila["imagen"];
                 
                 ?>
-              
+             
                  
                <div class="card p-2">
                    <p><?php echo $fila["titulo"];?></p>
@@ -83,16 +91,23 @@ $resulta=$conexion->query($consultar);
                    </div>
                
                 </div>
-                
-            
-                
-                
-                
                  
-                
             </div>
             
         </div>
+        
+        
+           <!--pagination-->
+        <?php
+  
+        for($i=1; $i<$total; $i++){
+           echo $i;
+        }
+        
+        ?>
+           <!--pagination-->
+        
+        
     </div>
 </div>
 

@@ -18,7 +18,10 @@ if (isset($_POST["insta"]))
    
     $insertar=" INSERT INTO contenidos(titulo,contenido,imagen,fecha)value('$tito','$contenido','$img',' $fecha')";
     
+       
     $resulta=$conexion->query($insertar);
+     
+        
     if($resulta){
         echo "datos insertado";
     }else{
@@ -38,9 +41,11 @@ if (isset($_POST["insta"]))
 
 
 
-$conexion->close();
 
+ 
 ?>
+
+
 <br>
 <a href="finsert.php">nuevo</a>
 <a href="index1.php">ir ver  el blog</a>
